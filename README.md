@@ -1,5 +1,7 @@
 # AmazeBridge 🌉
 
+<img width="1065" height="685" alt="image" src="https://github.com/user-attachments/assets/ba3440a5-e558-4e2a-8058-c489f48216ce" />
+
 **AmazeBridge** is a powerful, single-file P2P tunneling and communication platform tailored for gamers and privacy enthusiasts. It creates a secure encrypted mesh network between peers, allowing for low-latency voice chat, file sharing, and **Game Tunneling** (LAN over Internet) without requiring administrator privileges or driver installation.
 
 ![License](https://img.shields.io/github/license/Adiru3/AmazeBridge) ![Platform](https://img.shields.io/badge/platform-Windows-blue) ![Size](https://img.shields.io/badge/size-Single%20EXE-success)
