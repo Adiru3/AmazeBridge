@@ -1,75 +1,68 @@
-# AmazeBridge
+# AmazeBridge 🌉
 
-AmazeBridge is a fully decentralized, peer-to-peer (P2P) messenger and collaboration tool built on pure C# .NET Framework 4.0. It operates without any central servers, using a UDP mesh network for communication and TCP bridging for tunneling services.
+**AmazeBridge** is a powerful, single-file P2P tunneling and communication platform tailored for gamers and privacy enthusiasts. It creates a secure encrypted mesh network between peers, allowing for low-latency voice chat, file sharing, and **Game Tunneling** (LAN over Internet) without requiring administrator privileges or driver installation.
 
-The application is designed as a single source file solution with zero external dependencies, compiling directly into a standalone executable.
+![License](https://img.shields.io/github/license/Adiru3/AmazeBridge) ![Platform](https://img.shields.io/badge/platform-Windows-blue) ![Size](https://img.shields.io/badge/size-Single%20EXE-success)
 
-## Features
+## 🚀 Features
 
-### 🌐 Decentralized Networking
-- **Serverless Architecture**: Uses a UDP-based mesh network where every participant acts as a node.
-- **Resilient Rooms**: Rooms persist as long as at least one peer is online.
-- **P2P Discovery**: Automatic peer discovery within the specified room context.
+### 🎮 Game Tunneling (Virtual LAN)
+*   **Port Forwarding**: Map any TCP/UDP port from your local machine to a remote peer.
+*   **Range Support**: Forward entire ranges (e.g., `27000-27050`) for complex games like Counter-Strike or ARK.
+*   **No Drivers**: Uses User-Mode TCP/UDP proxying. No admin rights or TAP adapters required.
 
-### 🔒 Security & Privacy
-- **Encrypted Configuration**: Local `settings.json` is protected using XOR encryption with a fixed key.
-- **Room Security**: Room access is protected via SHA256 password hashing.
-- **Traffic Protection**: Chat and signaling packets are encrypted using room-specific keys.
-- **Blacklist**: Built-in IP-based blocking system.
-- **Contact Mode**: Option to accept messages only from trusted contacts.
+### 🗣️ Crystal Clear Voice & Chat
+*   **High Quality Voice**: Low-latency Opus/MuLaw audio.
+*   **Push-to-Talk (PTT)**: Global hotkey support (Default: **K**).
+*   **Direct Calling**: Ring specific users with a dedicated call UI.
+*   **Voice Messages**: Record and send voice clips directly in the chat.
+*   **Private Messaging**: Encrypted PMs to any user in the room.
 
-### 🎙️ High-Performance Audio
-- **Native Implementation**: Direct interaction with `winmm.dll` (WaveIn/WaveOut) for low-latency audio.
-- **Voice Features**:
-  - Push-to-Talk (Default: `Space`)
-  - Voice Activity Controls (Mute/Deafen)
-  - Individual Volume Control per peer
+### 🛡️ Secure & Portable
+*   **Zero Install**: A single `.exe` file.
+*   **Clean System**: Automatically deploys dependencies (`WebView2`, `NAudio`) to `C:\ProgramData\AmazeBridge`, keeping your desktop clean.
+*   **P2P Architecture**: UDP Hole Punching allows connection through most firewalls without manual port forwarding.
+*   **Symmetric Relay**: Intelligent fallback for Strict NAT types.
 
-### 🚇 TCP Tunneling
-- **Local Port Forwarding**: Expose local TCP services to other room members via P2P tunnels.
-- **Secure Bridging**: Traffic is tunneled directly between peers.
+---
 
-### 🎨 Native UI (Glassmorphism)
-- **Custom GDI+ Rendering**: A unique dark-themed interface with glass-like effects (`#0f172a` base).
-- **No Browser Engine**: Pure WinForms implementation for minimal resource usage.
-- **Localization**: Full support for English, Russian, Ukrainian, and Turkish.
+## 📚 User Guide & Tutorial
 
-## Installation
+### 1. Hosting a Room
+1.  Run `AmazeBridge.exe`.
+2.  Click **+ Create Host**.
+3.  Set a **Password** for your room (e.g., `mypass123`).
+4.  Wait for the status to change to **Host Mode**.
+5.  **Share your IP** (displayed in the user list) with your friends.
 
-1. Download the latest release or compile from source.
-2. Run `AmazeBridge.exe` as Administrator.
-3. The application will automatically:
-   - Install itself to `C:\Program Files\AmazeBridge\`.
-   - Offer to create a Scheduled Task for auto-start on logon.
+### 2. Joining a Room
+1.  Run `AmazeBridge.exe`.
+2.  Click **-> Join Tunnel**.
+3.  Enter the **Host's IP Address** (e.g., `192.168.1.5` or their Public IP).
+4.  Enter the **Password**.
+5.  Click **Join**. You will see the user list populate upon success.
 
-## Compilation
+### 3. Using Voice Chat
+*   **Talk**: Hold **K** on your keyboard (even if the app is minimized) to speak.
+*   **Call**: Right-click a user in the list and select **Call**. They will hear a ringtone and can Accept/Reject.
+*   **Voice Note**: Click the Microphone icon in the chat bar to record a clip, click again to send.
 
-This project is designed to be compiled with the standard C# compiler included in Windows. No Visual Studio or NuGet packages are required.
+### 4. 🎮 How to Play Games (Game Tunnel)
+To play a LAN game with a friend (e.g., Minecraft, Terraria, CS 1.6):
 
-**Requirements:**
-- .NET Framework 4.0
-- Windows OS
+**Scenario**: Your friend is hosting a **Minecraft** server on port `25565`.
 
-**Build Command:**
-```powershell
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:winexe /out:AmazeBridge.exe /reference:System.Windows.Forms.dll /reference:System.Drawing.dll AmazeBridge.cs
-```
+1.  **Friend (Host)**: Runs the Minecraft Server.
+2.  **You (Client)**:
+    *   Click **Map Ports (Game)** (Blue Button).
+    *   **Remote Peer IP**: Enter your friend's IP from the User List.
+    *   **Ports**: Enter `25565`.
+    *   Click **Add Rule**.
+3.  **Connect**: Open Minecraft -> Multiplayer -> Direct Connect.
+4.  **Server Address**: Enter `127.0.0.1:25565`.
+5.  **Play!**: AmazeBridge routes the traffic securely to your friend.
 
-## Usage
-
-### Hotkeys
-- **Push-to-Talk**: `Space` (Hold to speak)
-- **Toggle Mute**: `M`
-
-### Creating a Room
-1. Click **Create** in the Rooms tab.
-2. Enter a Room Name and Password.
-3. Share the Room Name and Password with peers.
-
-### Tunneling
-1. In a room, navigate to the **Tunnel** tab.
-2. Configure the **Host Port** (the service you want to share) and **Client Port** (where you want to access it).
-3. Click **Enable**.
+---
 
 ## 🔗 Connect with me
 [![YouTube](https://img.shields.io/badge/YouTube-@adiruaim-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@adiruaim)
@@ -85,5 +78,4 @@ C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe /target:winexe /out:AmazeB
 ### 🌍 Support Links
 [![Donatello](https://img.shields.io/badge/Support-Donatello-orange?style=for-the-badge)](https://donatello.to/Adiru3)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-blue?style=for-the-badge&logo=kofi)](https://ko-fi.com/adiru)
-
 [![Steam](https://img.shields.io/badge/Steam-Trade-blue?style=for-the-badge&logo=steam)](https://steamcommunity.com/tradeoffer/new/?partner=1124211419&token=2utLCl48)
