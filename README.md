@@ -66,6 +66,27 @@ To play a LAN game with a friend (e.g., Minecraft, Terraria, CS 1.6):
 
 ---
 
+### 🐧 Linux / Ubuntu
+1.  Download the `AmazeBridge` file.
+2.  Open Terminal.
+3.  Make it executable:
+    ```bash
+    chmod +x AmazeBridge
+    ```
+4.  Run it:
+    ```bash
+    ./AmazeBridge
+    ```
+
+### 🍎 macOS
+1.  Download `AmazeBridge.Mac.app`.
+2.  **Permissions**: If the app fails to open, run this in Terminal:
+    ```bash
+    chmod +x AmazeBridge.Mac.app/Contents/MacOS/AmazeBridge.Mac
+    ```
+3.  **Launch**: Double-click [AmazeBridge.Mac](cci:7://file:///c:/Users/adiru/Desktop/AmazeBridge-mac/AmazeBridge.Mac.app/Contents/MacOS/AmazeBridge.Mac:0:0-0:0) app.
+    *   *Note: If you see "Unidentified Developer", Right-Click -> Select "Open".*
+
 ## 🔗 Connect with me
 [![YouTube](https://img.shields.io/badge/YouTube-@adiruaim-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@adiruaim)
 [![TikTok](https://img.shields.io/badge/TikTok-@adiruhs-000000?style=for-the-badge&logo=tiktok)](https://www.tiktok.com/@adiruhs)
